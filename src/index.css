@@ -79,3 +79,12 @@ body {
 .form [type="submit"]:hover {
     background-color: #15ca9a;
 }
+
+.error-message {
+    padding: 1rem;
+    background-color: red;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 1rem;
+    color: white;
+}

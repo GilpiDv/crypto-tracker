@@ -13,3 +13,8 @@ export const CryptoCurrencyResponseSchema = z.object({
 })
 
 export const CryptoCurrenciesResponseSchema = z.array(CryptoCurrencyResponseSchema) // Its the same as TypeName[];
+
+export const PairSchema = z.object({
+    currency: z.string(),
+    cryptoCurrency: z.string()
+})
