@@ -5,11 +5,11 @@ import { useCryptoStore } from "../store";
 
 export default function CryptoSearchForm() {
 
-    const { fetchCryptos } = useCryptoStore(); 
+    const { fetchCryptos, cryptoCurrencies } = useCryptoStore(); 
 
     useEffect(() => {
         fetchCryptos();
-    }, [fetchCryptos])
+    }, [fetchCryptos]);
 
     return (
         <form className='form'>
@@ -33,7 +33,9 @@ export default function CryptoSearchForm() {
                     id="cryptoCurrency"
                 >
                     <option value="">Select</option>
-
+                    {cryptoCurrencies.map(crypto => (
+                        <option key={crypto.CoinInfo.Name} value={crypto.CoinInfo.Name}>{crypto.CoinInfo.FullName}</option>
+                    ))}
                 </select>
             </div>
 
