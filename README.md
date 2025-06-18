@@ -1,54 +1,98 @@
-# React + TypeScript + Vite
+# Crypto React Quoter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple cryptocurrency price quoter built with React, TypeScript, Zustand, and Vite. This app allows users to select a fiat currency and a cryptocurrency, then fetches and displays the latest price and related information using the CryptoCompare API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Select from top 20 cryptocurrencies by market cap
+- Choose from multiple fiat currencies (USD, MXN, EUR, GBP)
+- Fetches real-time price data, including high/low, 24h change, and last update
+- Loading spinner and error handling
+- Modern React (v19) with functional components and hooks
+- State management with Zustand
+- Type-safe schemas with Zod
+- Styled with custom CSS
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+├── public/
+│   └── bg.jpg
+├── src/
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   ├── Spinner.css
+│   ├── store.ts
+│   ├── data/
+│   │   └── index.ts
+│   ├── schemas/
+│   │   └── crypto-schema.ts
+│   ├── services/
+│   │   └── CryptoService.ts
+│   ├── types/
+│   │   └── index.ts
+│   └── components/
+│       ├── CryptoPriceDisplay.tsx
+│       ├── CryptoSearchForm.tsx
+│       ├── ErrorMessage.tsx
+│       └── LoadingSpinner.tsx
+├── index.html
+├── package.json
+├── tsconfig*.json
+├── vite.config.ts
+└── eslint.config.js
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- Node.js (v18+ recommended)
+- npm
+
+### Installation
+
+```sh
+npm install
 ```
+
+### Development
+
+Start the development server:
+
+```sh
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build
+
+To build for production:
+
+```sh
+npm run build
+```
+
+### Lint
+
+To lint the codebase:
+
+```sh
+npm run lint
+```
+
+## Technologies Used
+
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [Zod](https://zod.dev/)
+- [Axios](https://axios-http.com/)
+- [CryptoCompare API](https://min-api.cryptocompare.com/)
+
+## License
+
+This project is licensed under the MIT License.
