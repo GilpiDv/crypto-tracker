@@ -1,17 +1,16 @@
 # Crypto React Quoter
 
-A simple cryptocurrency price quoter built with React, TypeScript, Zustand, and Vite. This app allows users to select a fiat currency and a cryptocurrency, then fetches and displays the latest price and related information using the CryptoCompare API.
-
 ## Features
 
-- Select from top 20 cryptocurrencies by market cap
-- Choose from multiple fiat currencies (USD, MXN, EUR, GBP)
-- Fetches real-time price data, including high/low, 24h change, and last update
+- Select from the top 20 cryptocurrencies by market cap
+- Choose between multiple fiat currencies (USD, MXN, EUR, GBP)
+- Real-time price quotes using the CryptoCompare API
+- Displays price, high/low, 24h change, and last update
 - Loading spinner and error handling
-- Modern React (v19) with functional components and hooks
 - State management with Zustand
 - Type-safe schemas with Zod
-- Styled with custom CSS
+- Built with React 19, TypeScript, and Vite
+- Custom CSS styling
 
 ## Project Structure
 
@@ -24,6 +23,7 @@ A simple cryptocurrency price quoter built with React, TypeScript, Zustand, and 
 │   ├── index.css
 │   ├── Spinner.css
 │   ├── store.ts
+│   ├── vite-env.d.ts
 │   ├── data/
 │   │   └── index.ts
 │   ├── schemas/
@@ -39,53 +39,29 @@ A simple cryptocurrency price quoter built with React, TypeScript, Zustand, and 
 │       └── LoadingSpinner.tsx
 ├── index.html
 ├── package.json
-├── tsconfig*.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
 ├── vite.config.ts
-└── eslint.config.js
+├── eslint.config.js
+└── .gitignore
 ```
 
-## Getting Started
+## Installation
 
-### Prerequisites
-
-- Node.js (v18+ recommended)
-- npm
-
-### Installation
-
-```sh
-npm install
-```
-
-### Development
-
-Start the development server:
-
-```sh
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Build
-
-To build for production:
-
-```sh
-npm run build
-```
-
-### Lint
-
-To lint the codebase:
-
-```sh
-npm run lint
-```
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/crypto-react-ts.git
+   cd crypto-react-ts
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
 ## Technologies Used
 
-- [React](https://react.dev/)
+- [React 19](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [Zustand](https://zustand-demo.pmnd.rs/)
@@ -93,6 +69,15 @@ npm run lint
 - [Axios](https://axios-http.com/)
 - [CryptoCompare API](https://min-api.cryptocompare.com/)
 
-## License
+## How to use
 
-This project is licensed under the MIT License.
+1. Start the development server:
+   ```sh
+   npm run dev
+   ```
+2. Open [http://localhost:5173](http://localhost:5173) in your browser.
+3. Select a fiat currency and a cryptocurrency, then click "Quote" to see the latest price and related data.
+
+## Live Demo
+
+[https://monumental-strudel-e706ff.netlify.app/](https://monumental-strudel-e706ff.netlify.app/)
